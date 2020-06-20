@@ -1,13 +1,14 @@
+const path = require ('path')
+const resolve = dir => {
+  return path.join(__dirname,dir)
+}
 module.exports = {
-  configureWebpack:{
-    resolve:{
-      alias:{
-        'assets':'@/assets',
-        'common':'@/common',
-        'components':'@/components',
-        'network':'@/network',
-        'views':'@/views',
-      }
-    }
+  chainWebpack(config){
+    config.resolve.alias
+    .set('assets',resolve('src/assets'))
+    .set('common',resolve('src/components/common'))
+    .set('content',resolve('src/components/content'))
+    .set('network',resolve('src/network'))
+    .set('views',resolve('src/views'))
   }
 }
