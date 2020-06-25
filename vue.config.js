@@ -10,5 +10,18 @@ module.exports = {
     .set('content',resolve('src/components/content'))
     .set('network',resolve('src/network'))
     .set('views',resolve('src/views'))
+  },
+  devServer:{
+    proxy:{
+      '/api':{
+        target:'http://152.136.185.210:8000/api/n3',
+        ws:true,
+        secure:false,
+        changeOrigin:true,
+        pathRewrite:{
+          '^/api':''
+        }
+      }
+    }
   }
 }

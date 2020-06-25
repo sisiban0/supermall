@@ -54,5 +54,6 @@ ul.tab-bar {
   align-items: center;
   width: 100%;
   box-shadow: 0 -1px 5px rgba(100, 100, 100, 0.2);
+  z-index: 10;
 }
 </style>
